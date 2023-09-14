@@ -1,20 +1,39 @@
-//LEARNING PROPS
-//agar hmne app.js me first and second vedio ka title set kr diya to
-//dusre component me ya child component me ye props object ki tarah jayenge
+/*title="Food Order Website" 
+    channel="food channel" 
+    views="10k" 
+    time="1 yr ago"
+    isko hm ek object ki trah use kr skte hai spread operator ki madat se {...obj} 
+    bs keys mathch honi chahiy jaise title in obj should match with title in vedio.js`s title */
+    //boolean wali value hamesha {} me likho
+
+
+
 import './App.css'
 import Vedio from "./components/Vedio"
+
 function App (){
+
+  let obj={
+    verified:'true',
+    title:"Food Order Website" ,
+    channel:"food channel" ,
+    views:"10k" ,
+    time:"1 yr ago",
+  }
   return(
     <div>
-    <div>hellow</div>
-    <Vedio  
+    <div>Vedio</div>
+    <Vedio {...obj}></Vedio>
+    <Vedio
+    verified={true} 
     title="Food Order Website" 
     channel="food channel" 
     views="10k" 
     time="1 yr ago" 
     >
     </Vedio> 
-    <Vedio  
+    <Vedio 
+    verified={false} 
     title="Food Order Website2"  
     channel="food channel" 
     views="1M" 
